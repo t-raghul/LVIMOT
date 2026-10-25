@@ -5,7 +5,7 @@ message: >-
 type: software
 title: "LVIMOT: LiDAR-Visual-Inertial Localization, Multi-Object Tracking and 4D Mapping"
 authors:
-  - name: "LVIMOT project contributors"
+  - name: "T.Raghul"
 version: 1.0.0
 date-released: 2026-10-25
 repository-code: "https://github.com/t-raghul/LVIMOT"
