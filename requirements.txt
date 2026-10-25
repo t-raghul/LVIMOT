@@ -1,0 +1,13 @@
+# Python 3.8 / CARLA 0.9.13 Windows application dependencies.
+# Install with setup_live_carla_env.bat. Do not install two OpenCV wheels.
+carla==0.9.13
+numpy==1.24.4
+scipy==1.10.1
+opencv-contrib-python==4.10.0.84
+PyYAML==6.0.3
+psutil
+ultralytics==8.3.0
+matplotlib==3.7.5
+pillow==10.4.0
+pytest==8.3.5
+threadpoolctl==3.5.0

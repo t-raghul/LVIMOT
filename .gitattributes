@@ -1,0 +1,6 @@
+# Treat pretrained models as binary artifacts
+*.pt binary
+*.ts binary
+*.npz binary
+*.png binary
+*.gz binary

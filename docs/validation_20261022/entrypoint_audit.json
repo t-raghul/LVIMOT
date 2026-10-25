@@ -1,0 +1,186 @@
+{
+  "entry_points": [
+    {
+      "entry": "tools/analyze_recorded_trace.py",
+      "code": 0,
+      "help_output": "usage: analyze_recorded_trace.py [-h] directory\n\nAttribute recorded MOT misses to sensing or publication, evaluation only.\n\npositional arguments:\n  directory\n\noptional arguments:\n  -h, --help  show this help message and exit\n"
+    },
+    {
+      "entry": "tools/audit_geometric_observability.py",
+      "code": 0,
+      "help_output": "usage: audit_geometric_observability.py [-h] --capture CAPTURE\n                                        --trace-directory TRACE_DIRECTORY\n\nEvaluation-only check: 2D-box LiDAR support versus true 3D actor-box hits. A\nLiDAR return projected inside a vehicle's image box may hit a background\nbuilding. This audit uses held-out CARLA boxes only to diagnose that\nambiguity. It does not modify the detector, tracker, estimator, or existing\nMOT protocol.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --trace-directory TRACE_DIRECTORY\n"
+    },
+    {
+      "entry": "tools/audit_saved_mot_detector.py",
+      "code": 0,
+      "help_output": "usage: audit_saved_mot_detector.py [-h] --capture CAPTURE [--model MODEL]\n                                   [--device DEVICE] [--geometry-only]\n\nEvaluation-only MOT detector audit for a previously recorded LVIMOT Fast run.\nRuns YOLO+LiDAR detection ONLY on frames with CARLA-evaluation-eligible\nactors. Does NOT start CARLA, rerun localization, update a map, or give GT to\ndetector. Windows usage from CARLA_LVIMOT-main:\n.venv_live38\\Scripts\\python.exe audit_saved_mot_detector.py --capture\n\"outputs_carla\\live\\sensor_recordings\\capture_20261020_085053_922129\" For an\nenvironment lacking YOLO, --geometry-only verifies GT observability and writes\na report without inference. Only inference mode can diagnose YOLO misses.\n\noptional arguments:\n  -h, --help         show this help message and exit\n  --capture CAPTURE\n  --model MODEL\n  --device DEVICE\n  --geometry-only\n"
+    },
+    {
+      "entry": "tools/capture_independent_scene_reference.py",
+      "code": 0,
+      "help_output": "usage: capture_independent_scene_reference.py [-h] --capture CAPTURE --output\n                                              OUTPUT [--host HOST]\n                                              [--port PORT]\n                                              [--spacing-m SPACING_M]\n                                              [--radius-m RADIUS_M]\n\nRender an independent 360-degree CARLA scene reference along a saved route.\nFour overlapping depth/semantic views are placed at the recorded LiDAR origin.\nOnly evaluation reference data is written. Original sensors, estimated poses,\ntracking, and map state are never modified. Existing actors/processes remain.\nAll sensor images and exact capture transforms are saved for offline reuse.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --output OUTPUT\n  --host HOST\n  --port PORT\n  --spacing-m SPACING_M\n  --radius-m RADIUS_M\n"
+    },
+    {
+      "entry": "tools/evaluate_ground_surface_candidates.py",
+      "code": 0,
+      "help_output": "usage: evaluate_ground_surface_candidates.py [-h] --capture CAPTURE\n                                             --trace-directory TRACE_DIRECTORY\n                                             --reference-directory\n                                             REFERENCE_DIRECTORY\n\nEvaluate sensor-only horizontal ground candidates against CARLA semantics.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --trace-directory TRACE_DIRECTORY\n  --reference-directory REFERENCE_DIRECTORY\n"
+    },
+    {
+      "entry": "tools/evaluate_independent_scene_geometry.py",
+      "code": 0,
+      "help_output": "usage: evaluate_independent_scene_geometry.py [-h] --capture CAPTURE\n                                              --rolling-world ROLLING_WORLD\n                                              --reference-directory\n                                              REFERENCE_DIRECTORY --output\n                                              OUTPUT\n                                              [--accumulated-local ACCUMULATED_LOCAL]\n                                              [--protocol PROTOCOL]\n\nScore rolling and accumulated LVIMOT geometry against independent CARLA depth.\nThe primary map is placed with the first recorded pose only. A fitted rigid\nalignment is an additional diagnostic and never changes the sensor map.\nReference semantics measure category coverage, not invented mapper labels.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --rolling-world ROLLING_WORLD\n  --reference-directory REFERENCE_DIRECTORY\n  --output OUTPUT\n  --accumulated-local ACCUMULATED_LOCAL\n  --protocol PROTOCOL\n"
+    },
+    {
+      "entry": "tools/evaluate_measured_road.py",
+      "code": 0,
+      "help_output": "usage: evaluate_measured_road.py [-h] [--project PROJECT] --capture CAPTURE\n                                 --replay REPLAY\n\noptional arguments:\n  -h, --help         show this help message and exit\n  --project PROJECT\n  --capture CAPTURE\n  --replay REPLAY\n"
+    },
+    {
+      "entry": "tools/evaluate_recorded_scene_tracking.py",
+      "code": 0,
+      "help_output": "usage: evaluate_recorded_scene_tracking.py [-h] --capture CAPTURE\n                                           --trace-directory TRACE_DIRECTORY\n                                           --static-reference STATIC_REFERENCE\n\nSeparate, explicitly defined whole-scene MOT evaluation of saved sensor\ntracks. The original NPC-only MOTA remains unchanged in\nvalidation_summary.json. This additional protocol includes CARLA's static\nparked vehicles and requires actual 3D actor-box LiDAR hits, rather than\nbackground hits inside a 2D rectangle. Known actors without sufficient current\nmeasured depth define ignore regions; only an RGB match plus a nearby 3D\nhypothesis can be ignored. No estimator runs.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --trace-directory TRACE_DIRECTORY\n  --static-reference STATIC_REFERENCE\n"
+    },
+    {
+      "entry": "tools/export_carla_evaluation_reference.py",
+      "code": 0,
+      "help_output": "usage: export_carla_evaluation_reference.py [-h] --output OUTPUT [--host HOST]\n                                            [--port PORT]\n\nRead original CARLA static vehicle boxes and sensor defaults for evaluation.\nThis program only queries the server. It does not tick, load a world, change\nsettings, spawn actors, enable objects, or feed data to LVIMOT estimation.\n\noptional arguments:\n  -h, --help       show this help message and exit\n  --output OUTPUT\n  --host HOST\n  --port PORT\n"
+    },
+    {
+      "entry": "tools/export_original_carla_map.py",
+      "code": 0,
+      "help_output": "usage: export_original_carla_map.py [-h]\n\nOne-click reference map export from the latest LVIMOT recorded route. Requires\nrunning CARLA 0.9.13 Town10HD_Opt and a previously saved capture. Produces an\nindependent observed-area PLY, NOT the entire Unreal world mesh. Reference\nposes are used ONLY here for evaluation; never in LVIMOT mapping.\n\noptional arguments:\n  -h, --help  show this help message and exit\n"
+    },
+    {
+      "entry": "tools/refit_traffic_context.py",
+      "code": 0,
+      "help_output": "usage: refit_traffic_context.py [-h] --features FEATURES --feature-model\n                                FEATURE_MODEL --expected-feature-sha256\n                                EXPECTED_FEATURE_SHA256 --output OUTPUT\n\nReproduce the shipped linear classifier from frozen training features. The\nfeature archive contains only supervised training examples. This command does\nnot tune thresholds or read evaluation recordings. Image embedding provenance\nand the separate validation results are supplied in the model card.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --features FEATURES\n  --feature-model FEATURE_MODEL\n  --expected-feature-sha256 EXPECTED_FEATURE_SHA256\n  --output OUTPUT\n"
+    },
+    {
+      "entry": "tools/regenerate_offline_html.py",
+      "code": 0,
+      "help_output": "usage: regenerate_offline_html.py [-h] --output-dir OUTPUT_DIR\n                                  [--capture-if-missing]\n                                  [--require-full-reference]\n                                  [--html-output HTML_OUTPUT]\n\nRegenerate an honest offline CARLA-vs-LVIMOT 3D comparison for one run.\nExamples: python tools/regenerate_offline_html.py --output-dir\noutputs_carla/live python tools/regenerate_offline_html.py --output-dir\noutputs_carla/live --capture-if-missing --require-full-reference A complete\nCARLA scene comparison requires a separately rendered, independent 360-degree\ndepth reference of THIS recorded route. The OpenDRIVE road-only PLY is\ndeliberately not accepted as a full CARLA map. Ground truth is used here only\nAFTER estimation; no estimator inputs or evaluation scores are changed.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --output-dir OUTPUT_DIR\n                        Folder with the final run offline_4d_map.ply,\n                        offline_4d_scene.json and live_results.json\n  --capture-if-missing  Render the exact recorded route using a running CARLA\n                        server if 360 reference is absent\n  --require-full-reference\n                        Fail rather than create a misleading road-only CARLA\n                        map\n  --html-output HTML_OUTPUT\n                        Save a standalone HTML copy here while reading the\n                        original completed run\n"
+    },
+    {
+      "entry": "tools/render_geometry_comparison.py",
+      "code": 0,
+      "help_output": "usage: render_geometry_comparison.py [-h] --capture CAPTURE --estimated\n                                     ESTIMATED --reference REFERENCE --output\n                                     OUTPUT [--title TITLE]\n\nRender reproducible static 3D and top-view comparison of two world-frame PLYs.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --estimated ESTIMATED\n  --reference REFERENCE\n  --output OUTPUT\n  --title TITLE\n"
+    },
+    {
+      "entry": "tools/render_mot_diagnostics.py",
+      "code": 0,
+      "help_output": "usage: render_mot_diagnostics.py [-h] --capture CAPTURE --trace-directory\n                                 TRACE_DIRECTORY --output OUTPUT\n                                 [--frames FRAMES FRAMES FRAMES FRAMES FRAMES FRAMES]\n                                 [--actor ACTOR]\n\nInspect RGB boxes and measured LiDAR returns at recorded MOT misses.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --trace-directory TRACE_DIRECTORY\n  --output OUTPUT\n  --frames FRAMES FRAMES FRAMES FRAMES FRAMES FRAMES\n  --actor ACTOR\n"
+    },
+    {
+      "entry": "tools/render_recorded_motion_validation.py",
+      "code": 0,
+      "help_output": "usage: render_recorded_motion_validation.py [-h] --capture CAPTURE\n                                            --trace-directory TRACE_DIRECTORY\n\nPlot first-pose trajectory placement and measured/predicted object histories.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --trace-directory TRACE_DIRECTORY\n"
+    },
+    {
+      "entry": "tools/replay_fps_road.py",
+      "code": 0,
+      "help_output": "usage: replay_fps_road.py [-h] [--project PROJECT] --capture CAPTURE --output\n                          OUTPUT [--device DEVICE] [--threads THREADS]\n                          [--limit LIMIT] [--no-gt] [--profile] [--render]\n                          [--road] [--no-archive] [--async-preview]\n\nMeasured raw replay including the live mapper archive and GUI rendering.\n\noptional arguments:\n  -h, --help         show this help message and exit\n  --project PROJECT\n  --capture CAPTURE\n  --output OUTPUT\n  --device DEVICE\n  --threads THREADS\n  --limit LIMIT\n  --no-gt\n  --profile\n  --render\n  --road\n  --no-archive\n  --async-preview\n"
+    },
+    {
+      "entry": "tools/replay_mota_regression.py",
+      "code": 0,
+      "help_output": "usage: replay_mota_regression.py [-h] --capture CAPTURE --output OUTPUT\n                                 [--disable-tiles] [--disable-traffic-context]\n                                 [--project PROJECT]\n                                 [--minimum-mota MINIMUM_MOTA] [--no-gt]\n                                 [--limit LIMIT] [--reference REFERENCE]\n\nOffline sensor replay with stage evidence, source hashes and optional\nregression gates. Use --project to replay an unmodified baseline project, then\nrerun normally with --reference BASELINE/summary.json. --no-gt exercises the\nevaluation boundary. --disable-traffic-context is a causal ablation, not an\noriginal-ZIP baseline. Output must be outside the read-only capture. This tool\nnever connects to CARLA.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --output OUTPUT\n  --disable-tiles\n  --disable-traffic-context\n  --project PROJECT     Alternative baseline project root; defaults to this\n                        project\n  --minimum-mota MINIMUM_MOTA\n                        Fail unless original-protocol MOTA is at least this\n                        fraction\n  --no-gt\n  --limit LIMIT\n  --reference REFERENCE\n                        Baseline summary.json from the identical capture\n"
+    },
+    {
+      "entry": "tools/replay_saved_capture.py",
+      "code": 0,
+      "help_output": "usage: replay_saved_capture.py [-h] --capture CAPTURE\n                               [--detector {camera_lidar,lidar}]\n                               [--model MODEL] [--device DEVICE]\n                               [--output OUTPUT]\n\nReplay an LVIMOT raw-sensor archive OFFLINE; does not connect to CARLA. Usage\n(Windows, from CARLA_LVIMOT-main): .venv_live38\\Scripts\\python.exe\ntools\\replay_saved_capture.py --capture\noutputs_carla\\live\\sensor_recordings\\capture_YYYY... For true reproduction of\ncamera+LiDAR MOT, keep --detector camera_lidar. Use --detector lidar for GPU-\nfree localization/map debugging (MOT then differs).\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --detector {camera_lidar,lidar}\n  --model MODEL\n  --device DEVICE\n  --output OUTPUT\n"
+    },
+    {
+      "entry": "tools/run_recorded_validation.py",
+      "code": 0,
+      "help_output": "usage: run_recorded_validation.py [-h] --capture CAPTURE --output OUTPUT\n                                  --cache-directory CACHE_DIRECTORY\n                                  [--reference REFERENCE]\n                                  [--without-gt-evaluation]\n                                  [--yolo-image-size YOLO_IMAGE_SIZE]\n                                  [--yolo-model YOLO_MODEL]\n\nReproducible sensor-only replay with cached RGB inference and diagnostic\ntraces. RGB inference caches contain image detections only. Simulator ground\ntruth is kept in separate evaluation fields and is never part of a cache key\nor detector input. No CARLA server is contacted by this program.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --output OUTPUT\n  --cache-directory CACHE_DIRECTORY\n  --reference REFERENCE\n  --without-gt-evaluation\n  --yolo-image-size YOLO_IMAGE_SIZE\n                        Explicit RGB inference resolution override; included\n                        in cache provenance\n  --yolo-model YOLO_MODEL\n                        Explicit local weights override; SHA recorded in cache\n                        provenance\n"
+    },
+    {
+      "entry": "tools/summarize_lvimot_acceptance.py",
+      "code": 0,
+      "help_output": "usage: summarize_lvimot_acceptance.py [-h] --trace-directory TRACE_DIRECTORY\n                                      [--protocol PROTOCOL]\n\nBuild an evidence-based acceptance table without running CARLA or estimators.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --trace-directory TRACE_DIRECTORY\n  --protocol PROTOCOL\n"
+    },
+    {
+      "entry": "tools/validate_carla_depth_reference.py",
+      "code": 0,
+      "help_output": "usage: validate_carla_depth_reference.py [-h] --capture CAPTURE\n                                         [--replay-output REPLAY_OUTPUT]\n                                         [--host HOST] [--port PORT]\n                                         [--timeout TIMEOUT]\n                                         [--pixel-stride PIXEL_STRIDE]\n                                         [--max-range-m MAX_RANGE_M]\n                                         [--evaluate-existing-reference]\n\nCapture an independent CARLA rendered-depth reference and score LVIMOT's map.\nThis is an evaluation-only tool. It reads the saved route's CARLA poses solely\nto place a depth camera and align the completed sensor-estimated map after the\nfact. It never feeds CARLA geometry or GT into LVIMOT estimation, tracking, or\nmapping. It re-renders only the recorded observed region; it cannot validate\nuntraversed parts of Town10HD_Opt. Run from the project root while a CARLA\n0.9.13 server is available: .venv_live38\\Scripts\\python.exe\ntools\\validate_carla_depth_reference.py --capture\noutputs_carla\\live\\sensor_recordings\\capture_20261020_085053_922129\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --replay-output REPLAY_OUTPUT\n  --host HOST\n  --port PORT\n  --timeout TIMEOUT\n  --pixel-stride PIXEL_STRIDE\n  --max-range-m MAX_RANGE_M\n  --evaluate-existing-reference\n                        Reuse the previously captured CARLA depth PLY; do not\n                        connect to or tick CARLA.\n"
+    },
+    {
+      "entry": "tools/verify_offline_fix.py",
+      "code": 0,
+      "help_output": "usage: verify_offline_fix.py [-h]\n\nOne-command LVIMOT preflight without starting CARLA or loading YOLO/CUDA. From\nCARLA_LVIMOT-main on Windows: .venv_live38\\Scripts\\python.exe\ntools\\verify_offline_fix.py\n\noptional arguments:\n  -h, --help  show this help message and exit\n"
+    },
+    {
+      "entry": "tools/verify_recorded_gt_boundary.py",
+      "code": 0,
+      "help_output": "usage: verify_recorded_gt_boundary.py [-h] --enabled ENABLED --disabled\n                                      DISABLED\n\nCompare complete sensor outputs with evaluation GT enabled and disabled.\n\noptional arguments:\n  -h, --help           show this help message and exit\n  --enabled ENABLED\n  --disabled DISABLED\n"
+    },
+    {
+      "entry": "tools/visualize_output.py",
+      "code": 0,
+      "help_output": "usage: visualize_output.py [-h] [--results-dir RESULTS_DIR]\n                           [--carla-root CARLA_ROOT] [--frame FRAME]\n                           [--max-frames MAX_FRAMES] [--output-dir OUTPUT_DIR]\n                           [--demo]\n\nLVIMOT Output Visualization Tool\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --results-dir RESULTS_DIR\n                        Path to output sequence JSON directory\n  --carla-root CARLA_ROOT\n                        Path to raw CARLA dataset root (for camera images)\n  --frame FRAME         Specific frame number to visualize (if None,\n                        visualizes sequence)\n  --max-frames MAX_FRAMES\n                        Maximum frames to render when processing sequence\n  --output-dir OUTPUT_DIR\n                        Directory to save rendered visualization images\n  --demo                Run synthetic demonstration visualization\n"
+    },
+    {
+      "entry": "lvimot/output/cli.py",
+      "code": 0,
+      "help_output": " CALIBRATION_FILE] [--host HOST]\n              [--port PORT] [--seconds SECONDS] [--wall-seconds WALL_SECONDS]\n              [--autopilot] [--evaluate-ground-truth] [--no-display]\n              [--traffic-vehicles TRAFFIC_VEHICLES]\n              [--fixed-delta FIXED_DELTA] [--seed SEED]\n              [--sensor-timeout SENSOR_TIMEOUT]\n              [--sliding-window-size SLIDING_WINDOW_SIZE]\n              [--map-voxel-size MAP_VOXEL_SIZE] [--map-radius MAP_RADIUS]\n              [--map-max-in-memory MAP_MAX_IN_MEMORY]\n\nCARLA LVIMOT offline/live runner\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --live                Run the live CARLA sensor pipeline\n  --carla-root CARLA_ROOT\n                        Offline CARLA-LVIMOT dataset root\n  --sequence SEQUENCE\n  --start-frame START_FRAME\n  --end-frame END_FRAME\n  --output-root OUTPUT_ROOT\n  --no-save-lidar-points\n  --detector-mode {camera_lidar,lidar}\n  --yolo-model YOLO_MODEL\n  --yolo-confidence YOLO_CONFIDENCE\n  --yolo-image-size YOLO_IMAGE_SIZE\n  --yolo-device YOLO_DEVICE\n  --sync-output         Disable bounded asynchronous frame JSON writing\n  --carla-install CARLA_INSTALL\n  --calibration-file CALIBRATION_FILE\n  --host HOST\n  --port PORT\n  --seconds SECONDS\n  --wall-seconds WALL_SECONDS\n                        Stop live mode after this many real seconds\n  --autopilot\n  --evaluate-ground-truth\n  --no-display\n  --traffic-vehicles TRAFFIC_VEHICLES\n                        NPC autopilot vehicles to spawn in live mode\n  --fixed-delta FIXED_DELTA\n                        Live synchronous CARLA step in seconds\n  --seed SEED           Deterministic live spawn/traffic seed\n  --sensor-timeout SENSOR_TIMEOUT\n                        Seconds to wait for each synchronized live sensor\n                        frame\n  --sliding-window-size SLIDING_WINDOW_SIZE\n                        Live FGO sliding-window size\n  --map-voxel-size MAP_VOXEL_SIZE\n                        Live rolling-map voxel size in meters\n  --map-radius MAP_RADIUS\n                        Live rolling-map radius in meters\n  --map-max-in-memory MAP_MAX_IN_MEMORY\n                        Live rolling-map max static voxels kept in memory\n"
+    },
+    {
+      "entry": "lvimot/output/live_gui.py",
+      "code": 0,
+      "help_output": "usage: live_gui.py [-h]\n\noptional arguments:\n  -h, --help  show this help message and exit\n"
+    },
+    {
+      "entry": "lvimot/output/evaluation/dataset_audit.py",
+      "code": 0,
+      "help_output": "usage: dataset_audit.py [-h] --carla-root CARLA_ROOT\n                        [--sequences [SEQUENCES [SEQUENCES ...]]]\n                        [--output OUTPUT] [--frozen-run-min FROZEN_RUN_MIN]\n                        [--rgb-analysis-width RGB_ANALYSIS_WIDTH]\n                        [--lidar-sample-stride LIDAR_SAMPLE_STRIDE]\n\nAudit CARLA-LVIMOT dataset motion/integrity before expensive processing\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --carla-root CARLA_ROOT\n  --sequences [SEQUENCES [SEQUENCES ...]]\n                        Sequence IDs; omit for all\n  --output OUTPUT\n  --frozen-run-min FROZEN_RUN_MIN\n  --rgb-analysis-width RGB_ANALYSIS_WIDTH\n  --lidar-sample-stride LIDAR_SAMPLE_STRIDE\n"
+    },
+    {
+      "entry": "lvimot/output/evaluation/tracking_scan.py",
+      "code": 0,
+      "help_output": "usage: tracking_scan.py [-h] --carla-root CARLA_ROOT\n                        [--sequences SEQUENCES [SEQUENCES ...]]\n                        [--samples-per-sequence SAMPLES_PER_SEQUENCE]\n                        [--yolo-model YOLO_MODEL]\n                        [--yolo-confidence YOLO_CONFIDENCE]\n                        [--yolo-image-size YOLO_IMAGE_SIZE]\n                        [--yolo-device YOLO_DEVICE]\n\nQuickly select a useful offline MOT validation window\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --carla-root CARLA_ROOT\n  --sequences SEQUENCES [SEQUENCES ...]\n  --samples-per-sequence SAMPLES_PER_SEQUENCE\n  --yolo-model YOLO_MODEL\n  --yolo-confidence YOLO_CONFIDENCE\n  --yolo-image-size YOLO_IMAGE_SIZE\n  --yolo-device YOLO_DEVICE\n"
+    },
+    {
+      "entry": "lvimot/output/evaluation/tracking_preflight.py",
+      "code": 0,
+      "help_output": "usage: tracking_preflight.py [-h] --carla-root CARLA_ROOT\n                             [--sequence SEQUENCE] [--frame FRAME]\n                             [--yolo-model YOLO_MODEL]\n                             [--yolo-confidence YOLO_CONFIDENCE]\n                             [--yolo-image-size YOLO_IMAGE_SIZE]\n                             [--yolo-device YOLO_DEVICE] [--overlay OVERLAY]\n\nOne-frame GT-free MOT detector/evaluation preflight\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --carla-root CARLA_ROOT\n  --sequence SEQUENCE\n  --frame FRAME\n  --yolo-model YOLO_MODEL\n  --yolo-confidence YOLO_CONFIDENCE\n  --yolo-image-size YOLO_IMAGE_SIZE\n  --yolo-device YOLO_DEVICE\n  --overlay OVERLAY     Optional output path for GT/YOLO diagnostic overlay\n"
+    },
+    {
+      "entry": "lvimot/output/evaluation/recorded_imu_motion.py",
+      "code": 0,
+      "help_output": "usage: recorded_imu_motion.py [-h] --carla-root CARLA_ROOT\n                              [--sequence SEQUENCE]\n\nInspect recorded CARLA IMU motion; evaluation only.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --carla-root CARLA_ROOT\n  --sequence SEQUENCE\n"
+    },
+    {
+      "entry": "lvimot/preprocessing/imu_preintegration.py",
+      "code": 0,
+      "help_output": "usage: imu_preintegration.py [-h] --carla-root CARLA_ROOT\n                             [--sequence SEQUENCE]\n\nInspect recorded IMU preintegration; evaluation only.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --carla-root CARLA_ROOT\n  --sequence SEQUENCE\n"
+    },
+    {
+      "entry": "module:lvimot",
+      "code": 0,
+      "help_output": " PORT] [--seconds SECONDS]\n                   [--wall-seconds WALL_SECONDS] [--autopilot]\n                   [--evaluate-ground-truth] [--no-display]\n                   [--traffic-vehicles TRAFFIC_VEHICLES]\n                   [--fixed-delta FIXED_DELTA] [--seed SEED]\n                   [--sensor-timeout SENSOR_TIMEOUT]\n                   [--sliding-window-size SLIDING_WINDOW_SIZE]\n                   [--map-voxel-size MAP_VOXEL_SIZE] [--map-radius MAP_RADIUS]\n                   [--map-max-in-memory MAP_MAX_IN_MEMORY]\n\nCARLA LVIMOT offline/live runner\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --live                Run the live CARLA sensor pipeline\n  --carla-root CARLA_ROOT\n                        Offline CARLA-LVIMOT dataset root\n  --sequence SEQUENCE\n  --start-frame START_FRAME\n  --end-frame END_FRAME\n  --output-root OUTPUT_ROOT\n  --no-save-lidar-points\n  --detector-mode {camera_lidar,lidar}\n  --yolo-model YOLO_MODEL\n  --yolo-confidence YOLO_CONFIDENCE\n  --yolo-image-size YOLO_IMAGE_SIZE\n  --yolo-device YOLO_DEVICE\n  --sync-output         Disable bounded asynchronous frame JSON writing\n  --carla-install CARLA_INSTALL\n  --calibration-file CALIBRATION_FILE\n  --host HOST\n  --port PORT\n  --seconds SECONDS\n  --wall-seconds WALL_SECONDS\n                        Stop live mode after this many real seconds\n  --autopilot\n  --evaluate-ground-truth\n  --no-display\n  --traffic-vehicles TRAFFIC_VEHICLES\n                        NPC autopilot vehicles to spawn in live mode\n  --fixed-delta FIXED_DELTA\n                        Live synchronous CARLA step in seconds\n  --seed SEED           Deterministic live spawn/traffic seed\n  --sensor-timeout SENSOR_TIMEOUT\n                        Seconds to wait for each synchronized live sensor\n                        frame\n  --sliding-window-size SLIDING_WINDOW_SIZE\n                        Live FGO sliding-window size\n  --map-voxel-size MAP_VOXEL_SIZE\n                        Live rolling-map voxel size in meters\n  --map-radius MAP_RADIUS\n                        Live rolling-map radius in meters\n  --map-max-in-memory MAP_MAX_IN_MEMORY\n                        Live rolling-map max static voxels kept in memory\n"
+    },
+    {
+      "entry": "module:lvimot.output.cli",
+      "code": 0,
+      "help_output": " CALIBRATION_FILE] [--host HOST]\n              [--port PORT] [--seconds SECONDS] [--wall-seconds WALL_SECONDS]\n              [--autopilot] [--evaluate-ground-truth] [--no-display]\n              [--traffic-vehicles TRAFFIC_VEHICLES]\n              [--fixed-delta FIXED_DELTA] [--seed SEED]\n              [--sensor-timeout SENSOR_TIMEOUT]\n              [--sliding-window-size SLIDING_WINDOW_SIZE]\n              [--map-voxel-size MAP_VOXEL_SIZE] [--map-radius MAP_RADIUS]\n              [--map-max-in-memory MAP_MAX_IN_MEMORY]\n\nCARLA LVIMOT offline/live runner\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --live                Run the live CARLA sensor pipeline\n  --carla-root CARLA_ROOT\n                        Offline CARLA-LVIMOT dataset root\n  --sequence SEQUENCE\n  --start-frame START_FRAME\n  --end-frame END_FRAME\n  --output-root OUTPUT_ROOT\n  --no-save-lidar-points\n  --detector-mode {camera_lidar,lidar}\n  --yolo-model YOLO_MODEL\n  --yolo-confidence YOLO_CONFIDENCE\n  --yolo-image-size YOLO_IMAGE_SIZE\n  --yolo-device YOLO_DEVICE\n  --sync-output         Disable bounded asynchronous frame JSON writing\n  --carla-install CARLA_INSTALL\n  --calibration-file CALIBRATION_FILE\n  --host HOST\n  --port PORT\n  --seconds SECONDS\n  --wall-seconds WALL_SECONDS\n                        Stop live mode after this many real seconds\n  --autopilot\n  --evaluate-ground-truth\n  --no-display\n  --traffic-vehicles TRAFFIC_VEHICLES\n                        NPC autopilot vehicles to spawn in live mode\n  --fixed-delta FIXED_DELTA\n                        Live synchronous CARLA step in seconds\n  --seed SEED           Deterministic live spawn/traffic seed\n  --sensor-timeout SENSOR_TIMEOUT\n                        Seconds to wait for each synchronized live sensor\n                        frame\n  --sliding-window-size SLIDING_WINDOW_SIZE\n                        Live FGO sliding-window size\n  --map-voxel-size MAP_VOXEL_SIZE\n                        Live rolling-map voxel size in meters\n  --map-radius MAP_RADIUS\n                        Live rolling-map radius in meters\n  --map-max-in-memory MAP_MAX_IN_MEMORY\n                        Live rolling-map max static voxels kept in memory\n"
+    },
+    {
+      "entry": "module:lvimot.output.live_gui",
+      "code": 0,
+      "help_output": "usage: live_gui.py [-h]\n\noptional arguments:\n  -h, --help  show this help message and exit\n"
+    },
+    {
+      "entry": "module:tools.regenerate_offline_html",
+      "code": 0,
+      "help_output": "usage: regenerate_offline_html.py [-h] --output-dir OUTPUT_DIR\n                                  [--capture-if-missing]\n                                  [--require-full-reference]\n                                  [--html-output HTML_OUTPUT]\n\nRegenerate an honest offline CARLA-vs-LVIMOT 3D comparison for one run.\nExamples: python tools/regenerate_offline_html.py --output-dir\noutputs_carla/live python tools/regenerate_offline_html.py --output-dir\noutputs_carla/live --capture-if-missing --require-full-reference A complete\nCARLA scene comparison requires a separately rendered, independent 360-degree\ndepth reference of THIS recorded route. The OpenDRIVE road-only PLY is\ndeliberately not accepted as a full CARLA map. Ground truth is used here only\nAFTER estimation; no estimator inputs or evaluation scores are changed.\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --output-dir OUTPUT_DIR\n                        Folder with the final run offline_4d_map.ply,\n                        offline_4d_scene.json and live_results.json\n  --capture-if-missing  Render the exact recorded route using a running CARLA\n                        server if 360 reference is absent\n  --require-full-reference\n                        Fail rather than create a misleading road-only CARLA\n                        map\n  --html-output HTML_OUTPUT\n                        Save a standalone HTML copy here while reading the\n                        original completed run\n"
+    },
+    {
+      "entry": "module:tools.replay_saved_capture",
+      "code": 0,
+      "help_output": "usage: replay_saved_capture.py [-h] --capture CAPTURE\n                               [--detector {camera_lidar,lidar}]\n                               [--model MODEL] [--device DEVICE]\n                               [--output OUTPUT]\n\nReplay an LVIMOT raw-sensor archive OFFLINE; does not connect to CARLA. Usage\n(Windows, from CARLA_LVIMOT-main): .venv_live38\\Scripts\\python.exe\ntools\\replay_saved_capture.py --capture\noutputs_carla\\live\\sensor_recordings\\capture_YYYY... For true reproduction of\ncamera+LiDAR MOT, keep --detector camera_lidar. Use --detector lidar for GPU-\nfree localization/map debugging (MOT then differs).\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --capture CAPTURE\n  --detector {camera_lidar,lidar}\n  --model MODEL\n  --device DEVICE\n  --output OUTPUT\n"
+    }
+  ],
+  "python38_compile_code": 0,
+  "python38_compile_output": "144\n"
+}

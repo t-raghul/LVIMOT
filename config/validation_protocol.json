@@ -1,0 +1,13 @@
+{
+  "purpose": "Predeclared engineering checks for observed-region reconstruction; not a claim of whole-town or formal external certification",
+  "ground_truth_policy": "Evaluation and reference generation only; never estimator, tracker, mapper, tuning input, or training",
+  "localization": {"ate_rmse_max_m": 2.0, "rpe_rmse_max_m": 0.25},
+  "independent_scene_geometry_initial_pose": {"estimate_within_1m_min_pct": 90.0, "reference_within_1m_min_pct": 80.0, "estimate_median_max_m": 0.5, "estimate_p95_max_m": 2.0},
+  "tracking_full_scene_measured_support_protocol": {"mota_min": 0.7, "position_rmse_max_m": 2.0, "velocity_rmse_max_m_s": 3.0},
+  "minimum_evidence": {"frames": 50, "traversed_distance_m": 20.0, "eligible_tracking_observations": 50, "unique_gt_vehicles": 2},
+  "scope": "Only the traversed and observed region, with rolling versus accumulated geometry reported separately",
+  "alignment": "First recorded ego-pose placement is primary; post-hoc rigid alignment is separate and cannot replace it",
+  "legacy_metrics": "Preserve historical NPC-only protocol results and report any expanded visibility/label protocol separately",
+  "native_driving_run_wall_seconds": 60,
+  "long_run": "Hours-long driving requires successful short checks and global drift/loop-closure work; accumulated storage alone does not correct trajectory drift"
+}

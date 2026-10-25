@@ -1,0 +1,39 @@
+{
+  "protocol": "INDEPENDENT_SEMANTIC_POINT_REFERENCE_V1",
+  "evaluation_only": true,
+  "scope": "final45m local area",
+  "road_labels": [
+    6,
+    7
+  ],
+  "full_scene_points": 108866,
+  "predicted_road_points": 22399,
+  "reference_road_points": 26810,
+  "thresholds": {
+    "0.25": {
+      "predicted_road_precision_pct": 80.85182374213134,
+      "all_reference_road_recall_pct": 70.10816859380829,
+      "observed_reference_road_recall_pct": 86.09417266516895,
+      "observed_reference_road_points": 21811,
+      "nearest_nonroad_or_unmatched_points": 4289
+    },
+    "0.5": {
+      "predicted_road_precision_pct": 93.44613598821377,
+      "all_reference_road_recall_pct": 85.02797463632973,
+      "observed_reference_road_recall_pct": 89.04296875,
+      "observed_reference_road_points": 25600,
+      "nearest_nonroad_or_unmatched_points": 1468
+    },
+    "1.0": {
+      "predicted_road_precision_pct": 98.7052993437207,
+      "all_reference_road_recall_pct": 90.52965311450951,
+      "observed_reference_road_recall_pct": 91.25122189638319,
+      "observed_reference_road_points": 26598,
+      "nearest_nonroad_or_unmatched_points": 290
+    }
+  },
+  "limits": [
+    "Camera sees only the front sector; the full map retains other visible surfaces.",
+    "Reference sampling density, semantic boundaries and estimated-pose error affect nearest-point labels."
+  ]
+}

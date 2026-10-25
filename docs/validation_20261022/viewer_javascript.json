@@ -1,0 +1,1 @@
+{"passed":8,"checks":["green confirmed IDs","ego time range","marker moves","slider reversal","ego independent of vehicles","vehicles independent of LVIMOT map","CARLA independent toggle","no-history fallback"]}

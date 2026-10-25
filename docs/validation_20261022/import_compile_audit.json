@@ -1,0 +1,1004 @@
+{
+  "compiled_files": [
+    "lvimot/__init__.py",
+    "lvimot/__main__.py",
+    "lvimot/inputs/carla_api.py",
+    "lvimot/inputs/recorded_detections.py",
+    "lvimot/inputs/recorded_sensors.py",
+    "lvimot/inputs/sensor_calibration.py",
+    "lvimot/inputs/sensor_profile.py",
+    "lvimot/inputs/sensor_recording.py",
+    "lvimot/inputs/synchronized_sensors.py",
+    "lvimot/mapping_4d/multiobject_trajectory_management.py",
+    "lvimot/mapping_4d/static_map/accumulated_map.py",
+    "lvimot/mapping_4d/static_map/measured_road_surface.py",
+    "lvimot/mapping_4d/static_map/rolling_voxel_map.py",
+    "lvimot/output/cli.py",
+    "lvimot/output/compute_runtime.py",
+    "lvimot/output/evaluation/dataset_audit.py",
+    "lvimot/output/evaluation/independent_reference.py",
+    "lvimot/output/evaluation/map_geometry.py",
+    "lvimot/output/evaluation/metrics.py",
+    "lvimot/output/evaluation/recorded_imu_motion.py",
+    "lvimot/output/evaluation/road_surface_audit.py",
+    "lvimot/output/evaluation/tracking_preflight.py",
+    "lvimot/output/evaluation/tracking_scan.py",
+    "lvimot/output/live_dashboard.py",
+    "lvimot/output/live_gui.py",
+    "lvimot/output/live_run.py",
+    "lvimot/output/map_export.py",
+    "lvimot/output/offline_map.py",
+    "lvimot/output/pipeline_inspector.py",
+    "lvimot/output/recorded_visualization.py",
+    "lvimot/preprocessing/camera_lidar_detection.py",
+    "lvimot/preprocessing/imu_preintegration.py",
+    "lvimot/preprocessing/lidar_object_measurements.py",
+    "lvimot/preprocessing/lidar_planar_features.py",
+    "lvimot/preprocessing/lidar_snapshot.py",
+    "lvimot/preprocessing/sensor_projection.py",
+    "lvimot/preprocessing/visual_features.py",
+    "lvimot/temporal_fusion/pipeline.py",
+    "lvimot/temporal_fusion/runtime_limits.py",
+    "lvimot/temporal_fusion/sensor_inertial_anchor.py",
+    "lvimot/temporal_fusion/sliding_window_factor_graph.py",
+    "lvimot/temporal_fusion/static_dynamic_classification.py",
+    "lvimot/tracking_4d/multimodal_object_tracking/association.py",
+    "lvimot/tracking_4d/multimodal_object_tracking/kalman_tracker.py",
+    "lvimot/tracking_4d/multimodal_object_tracking/multimodal_features.py",
+    "lvimot/tracking_4d/multimodal_object_tracking/traffic_context.py",
+    "lvimot/tracking_4d/static_scene_support/feature_correspondences.py",
+    "lvimot/tracking_4d/static_scene_support/measured_ground_support.py",
+    "lvimot/tracking_4d/static_scene_support/scene_consistency.py",
+    "tests/inspect_carla_imu_alignment.py",
+    "tests/inspect_carla_imu_detail.py",
+    "tests/inspect_carla_imu_offset.py",
+    "tests/inspect_carla_motion.py",
+    "tests/test_accumulated_static_map.py",
+    "tests/test_camera_lidar_detector.py",
+    "tests/test_carla_4d_mapping.py",
+    "tests/test_carla_camera_features.py",
+    "tests/test_carla_complete.py",
+    "tests/test_carla_evaluation.py",
+    "tests/test_carla_factors_and_optimization.py",
+    "tests/test_carla_live_export_preflight.py",
+    "tests/test_carla_mot_coordinate_frame.py",
+    "tests/test_carla_motion_classification.py",
+    "tests/test_carla_multimodal_features.py",
+    "tests/test_carla_reference_map_validation.py",
+    "tests/test_carla_sensor_objects.py",
+    "tests/test_carla_sliding_window.py",
+    "tests/test_carla_temporal_lidar.py",
+    "tests/test_carla_temporal_visual.py",
+    "tests/test_carla_tracking.py",
+    "tests/test_carla_tracking_basic.py",
+    "tests/test_carla_traffic_context.py",
+    "tests/test_consolidated_tentative_tracking_and_road_control.py",
+    "tests/test_estimated_ego_offline_map.py",
+    "tests/test_explicit_lidar_profile.py",
+    "tests/test_final_detector_bridge_and_scene_consistency.py",
+    "tests/test_final_map_coordinate_and_archive.py",
+    "tests/test_fps_road_safeguards.py",
+    "tests/test_full_lvimot_pipeline.py",
+    "tests/test_ground_surface_candidates.py",
+    "tests/test_independent_reference_geometry.py",
+    "tests/test_individual_object_scene.py",
+    "tests/test_lidar_icp_motion_scale_regression.py",
+    "tests/test_live_imu_outlier_guard.py",
+    "tests/test_live_map_presentation.py",
+    "tests/test_live_v1_adapter.py",
+    "tests/test_mot_detector_audit.py",
+    "tests/test_mot_v6_evaluation.py",
+    "tests/test_mot_v7_range_observability.py",
+    "tests/test_mot_v8_highres_observability.py",
+    "tests/test_mot_v9_corner_encodings.py",
+    "tests/test_mota_compact_foreground_and_model_classes.py",
+    "tests/test_mota_recorded_tracker_regression.py",
+    "tests/test_mota_sensor_only_improvements.py",
+    "tests/test_mota_tiled_detector_regression.py",
+    "tests/test_offline_4d_scene.py",
+    "tests/test_offline_reference_alignment.py",
+    "tests/test_rgb_instance_depth_support.py",
+    "tests/test_runtime_bounded.py",
+    "tests/test_sensor_inertial_anchor.py",
+    "tests/test_snapshot_and_sparse_mapping.py",
+    "tests/test_sparse_evidence_confirmation.py",
+    "tests/test_sparse_mot_audit_regression.py",
+    "tests/test_traffic_context_shipped_weights.py",
+    "tests/test_ui_minimal.py",
+    "tests/test_v11_performance_controls.py",
+    "tests/test_v12_performance_profile.py",
+    "tests/test_v13_performance_profile.py",
+    "tests/test_v15_integrity_stationary.py",
+    "tests/test_v17_motion_integrity_audit.py",
+    "tests/test_v18_audit_robustness.py",
+    "tests/test_v19_stationary_and_recall.py",
+    "tests/test_v20_mot_identity_publication.py",
+    "tests/test_v21_mot_recall_identity.py",
+    "tests/test_v22_weak_distant_and_static_filter.py",
+    "tests/test_v24_translation_stationary_veto.py",
+    "tests/test_v25_lidar_se3_odometry.py",
+    "tests/test_vehicle_facade_context.py",
+    "tests/test_windows_gui_startup_and_archive.py",
+    "tests/validate_carla_imu.py",
+    "tools/analyze_recorded_trace.py",
+    "tools/audit_geometric_observability.py",
+    "tools/audit_saved_mot_detector.py",
+    "tools/capture_independent_scene_reference.py",
+    "tools/evaluate_ground_surface_candidates.py",
+    "tools/evaluate_independent_scene_geometry.py",
+    "tools/evaluate_measured_road.py",
+    "tools/evaluate_recorded_scene_tracking.py",
+    "tools/export_carla_evaluation_reference.py",
+    "tools/export_original_carla_map.py",
+    "tools/refit_traffic_context.py",
+    "tools/regenerate_offline_html.py",
+    "tools/render_geometry_comparison.py",
+    "tools/render_mot_diagnostics.py",
+    "tools/render_recorded_motion_validation.py",
+    "tools/replay_fps_road.py",
+    "tools/replay_mota_regression.py",
+    "tools/replay_saved_capture.py",
+    "tools/run_recorded_validation.py",
+    "tools/summarize_lvimot_acceptance.py",
+    "tools/validate_carla_depth_reference.py",
+    "tools/verify_offline_fix.py",
+    "tools/verify_recorded_gt_boundary.py",
+    "tools/visualize_output.py"
+  ],
+  "python38_syntax_files": 144,
+  "imports": [
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.inputs.carla_api",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.inputs.recorded_detections",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.inputs.recorded_sensors",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.inputs.sensor_calibration",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.inputs.sensor_profile",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.inputs.sensor_recording",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.inputs.synchronized_sensors",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.mapping_4d.multiobject_trajectory_management",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.mapping_4d.static_map.accumulated_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.mapping_4d.static_map.measured_road_surface",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.mapping_4d.static_map.rolling_voxel_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.cli",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.compute_runtime",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.dataset_audit",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.independent_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.map_geometry",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.metrics",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.recorded_imu_motion",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.road_surface_audit",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.tracking_preflight",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.evaluation.tracking_scan",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.live_dashboard",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.live_gui",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.live_run",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.map_export",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.offline_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.pipeline_inspector",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.output.recorded_visualization",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.preprocessing.camera_lidar_detection",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.preprocessing.imu_preintegration",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.preprocessing.lidar_object_measurements",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.preprocessing.lidar_planar_features",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.preprocessing.lidar_snapshot",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.preprocessing.sensor_projection",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.preprocessing.visual_features",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.temporal_fusion.pipeline",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.temporal_fusion.runtime_limits",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.temporal_fusion.sensor_inertial_anchor",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.temporal_fusion.sliding_window_factor_graph",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.temporal_fusion.static_dynamic_classification",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.association",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.kalman_tracker",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.multimodal_features",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.traffic_context",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.tracking_4d.static_scene_support.feature_correspondences",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.tracking_4d.static_scene_support.measured_ground_support",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "lvimot.tracking_4d.static_scene_support.scene_consistency",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.analyze_recorded_trace",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.audit_geometric_observability",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.audit_saved_mot_detector",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.capture_independent_scene_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.evaluate_ground_surface_candidates",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.evaluate_independent_scene_geometry",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.evaluate_measured_road",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.evaluate_recorded_scene_tracking",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.export_carla_evaluation_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.export_original_carla_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.refit_traffic_context",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.regenerate_offline_html",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.render_geometry_comparison",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.render_mot_diagnostics",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.render_recorded_motion_validation",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.replay_fps_road",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.replay_mota_regression",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.replay_saved_capture",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.run_recorded_validation",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.summarize_lvimot_acceptance",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.validate_carla_depth_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.verify_offline_fix",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.verify_recorded_gt_boundary",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "C:\\Users\\senth\\python.exe",
+      "module": "tools.visualize_output",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.inputs.carla_api",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.inputs.recorded_detections",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.inputs.recorded_sensors",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.inputs.sensor_calibration",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.inputs.sensor_profile",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.inputs.sensor_recording",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.inputs.synchronized_sensors",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.mapping_4d.multiobject_trajectory_management",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.mapping_4d.static_map.accumulated_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.mapping_4d.static_map.measured_road_surface",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.mapping_4d.static_map.rolling_voxel_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.cli",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.compute_runtime",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.dataset_audit",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.independent_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.map_geometry",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.metrics",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.recorded_imu_motion",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.road_surface_audit",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.tracking_preflight",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.evaluation.tracking_scan",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.live_dashboard",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.live_gui",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.live_run",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.map_export",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.offline_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.pipeline_inspector",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.output.recorded_visualization",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.preprocessing.camera_lidar_detection",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.preprocessing.imu_preintegration",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.preprocessing.lidar_object_measurements",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.preprocessing.lidar_planar_features",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.preprocessing.lidar_snapshot",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.preprocessing.sensor_projection",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.preprocessing.visual_features",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.temporal_fusion.pipeline",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.temporal_fusion.runtime_limits",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.temporal_fusion.sensor_inertial_anchor",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.temporal_fusion.sliding_window_factor_graph",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.temporal_fusion.static_dynamic_classification",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.association",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.kalman_tracker",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.multimodal_features",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.tracking_4d.multimodal_object_tracking.traffic_context",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.tracking_4d.static_scene_support.feature_correspondences",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.tracking_4d.static_scene_support.measured_ground_support",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "lvimot.tracking_4d.static_scene_support.scene_consistency",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.analyze_recorded_trace",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.audit_geometric_observability",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.audit_saved_mot_detector",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.capture_independent_scene_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.evaluate_ground_surface_candidates",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.evaluate_independent_scene_geometry",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.evaluate_measured_road",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.evaluate_recorded_scene_tracking",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.export_carla_evaluation_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.export_original_carla_map",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.refit_traffic_context",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.regenerate_offline_html",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.render_geometry_comparison",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.render_mot_diagnostics",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.render_recorded_motion_validation",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.replay_fps_road",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.replay_mota_regression",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.replay_saved_capture",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.run_recorded_validation",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.summarize_lvimot_acceptance",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.validate_carla_depth_reference",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.verify_offline_fix",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.verify_recorded_gt_boundary",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    },
+    {
+      "python": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022\\.venv_live38\\Scripts\\python.exe",
+      "module": "tools.visualize_output",
+      "code": 0,
+      "output": "IMPORT_OK\n"
+    }
+  ],
+  "model_sha256": "52a4948db6ce858ca76ae77064d45bb17c6a33b193253bc52837f446851ce734"
+}

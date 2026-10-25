@@ -1,0 +1,39 @@
+# Python environments, generated caches and local IDE files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+.venv*/
+venv/
+brief_venv/
+.cuda_runtime/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated outputs and local machine configuration
+outputs/
+outputs_carla/
+lvimot_gui_config.json
+*.log
+*.tmp
+*.save
+*.bak
+*~
+
+# External CARLA binaries/datasets and captures
+CARLA_LVIMOT/
+sequences/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.bin
+*.pcd
+*.ply
+
+# Deliberately tracked sample HTML/JSON and model weights are under examples/ and models/

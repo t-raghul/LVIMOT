@@ -1,0 +1,134 @@
+{
+  "input_archive": "D:\\SEM\\LVIMOT\\LVIMOT_CURRENT_FIXED_20261022.zip",
+  "input_sha256": "3c48d74190f83bedf8bd7eb8c692939c3d16a68faf06e940ee2e66070ee88073",
+  "python_files_before": 150,
+  "python_files_after": 144,
+  "counts_before": {
+    "runtime_src": 56,
+    "root_scripts": 6,
+    "tools": 18,
+    "tests_and_diagnostics": 70
+  },
+  "counts_after": {
+    "runtime_lvimot": 49,
+    "root_scripts": 0,
+    "tools": 24,
+    "tests_and_diagnostics": 71
+  },
+  "cache_files_omitted": [
+    "src/__pycache__/brief_features.cpython-38.pyc",
+    "src/__pycache__/carla_4d_mapping.cpython-38.pyc",
+    "src/__pycache__/carla_accumulated_map.cpython-38.pyc",
+    "src/__pycache__/carla_api_loader.cpython-38.pyc",
+    "src/__pycache__/carla_box_projection.cpython-38.pyc",
+    "src/__pycache__/carla_calibration.cpython-38.pyc",
+    "src/__pycache__/carla_camera_lidar_detector.cpython-38.pyc",
+    "src/__pycache__/carla_compute_runtime.cpython-38.pyc",
+    "src/__pycache__/carla_detection.cpython-38.pyc",
+    "src/__pycache__/carla_evaluation.cpython-38.pyc",
+    "src/__pycache__/carla_factors.cpython-38.pyc",
+    "src/__pycache__/carla_factor_graph.cpython-38.pyc",
+    "src/__pycache__/carla_imu.cpython-38.pyc",
+    "src/__pycache__/carla_inertial_anchor.cpython-38.pyc",
+    "src/__pycache__/carla_lidar_camera_projection.cpython-38.pyc",
+    "src/__pycache__/carla_lidar_deskew.cpython-38.pyc",
+    "src/__pycache__/carla_lidar_features.cpython-38.pyc",
+    "src/__pycache__/carla_live_adapter.cpython-38.pyc",
+    "src/__pycache__/carla_live_main.cpython-38.pyc",
+    "src/__pycache__/carla_live_presentation.cpython-38.pyc",
+    "src/__pycache__/carla_live_visualizer.cpython-38.pyc",
+    "src/__pycache__/carla_map_presentation.cpython-38.pyc",
+    "src/__pycache__/carla_map_validation.cpython-38.pyc",
+    "src/__pycache__/carla_motion_classification.cpython-38.pyc",
+    "src/__pycache__/carla_multimodal_features.cpython-38.pyc",
+    "src/__pycache__/carla_object_scene.cpython-38.pyc",
+    "src/__pycache__/carla_offline_scene.cpython-38.pyc",
+    "src/__pycache__/carla_pipeline_core.cpython-38.pyc",
+    "src/__pycache__/carla_pipeline_inspector.cpython-38.pyc",
+    "src/__pycache__/carla_raw_sensor_archive.cpython-38.pyc",
+    "src/__pycache__/carla_reader.cpython-38.pyc",
+    "src/__pycache__/carla_reference_geometry.cpython-38.pyc",
+    "src/__pycache__/carla_road_surface_layer.cpython-38.pyc",
+    "src/__pycache__/carla_runtime_config.cpython-38.pyc",
+    "src/__pycache__/carla_sensor_objects.cpython-38.pyc",
+    "src/__pycache__/carla_sensor_profile.cpython-38.pyc",
+    "src/__pycache__/carla_sliding_window.cpython-38.pyc",
+    "src/__pycache__/carla_temporal_lidar.cpython-38.pyc",
+    "src/__pycache__/carla_temporal_visual.cpython-38.pyc",
+    "src/__pycache__/carla_tracking.cpython-38.pyc",
+    "src/__pycache__/carla_traffic_context.cpython-38.pyc",
+    "src/__pycache__/fast_features.cpython-38.pyc",
+    "src/__pycache__/imu_preintegration.cpython-38.pyc",
+    "__pycache__/capture_independent_scene_reference.cpython-38.pyc",
+    "__pycache__/validate_carla_depth_reference.cpython-38.pyc"
+  ],
+  "cache_file_count": 45,
+  "source_modules_discarded": [],
+  "removed_file_boundaries": [
+    {
+      "before": [
+        "fast_features.py",
+        "brief_features.py"
+      ],
+      "after": "lvimot/preprocessing/visual_features.py",
+      "reason": "Related feature detector/descriptor classes, both preserved"
+    },
+    {
+      "before": [
+        "carla_imu.py",
+        "imu_preintegration.py"
+      ],
+      "after": "lvimot/preprocessing/imu_preintegration.py",
+      "reason": "Related IMU normalization/preintegration classes, both preserved"
+    },
+    {
+      "before": [
+        "carla_lidar_transform.py",
+        "carla_lidar_camera_projection.py",
+        "carla_box_projection.py"
+      ],
+      "after": "lvimot/preprocessing/sensor_projection.py",
+      "reason": "Related calibrated projection/transform classes, all preserved"
+    },
+    {
+      "before": [
+        "carla_temporal_visual.py",
+        "carla_temporal_lidar.py"
+      ],
+      "after": "lvimot/tracking_4d/static_scene_support/feature_correspondences.py",
+      "reason": "Related static visual/LiDAR correspondence classes, all preserved"
+    },
+    {
+      "before": [
+        "carla_factors.py",
+        "carla_factor_graph.py",
+        "carla_sliding_window.py"
+      ],
+      "after": "lvimot/temporal_fusion/sliding_window_factor_graph.py",
+      "reason": "Related optimizer factors/graph/window classes, all preserved"
+    },
+    {
+      "before": [
+        "carla_live_visualizer.py",
+        "carla_live_presentation.py"
+      ],
+      "after": "lvimot/output/live_dashboard.py",
+      "reason": "Dashboard renderer and bounded worker process, both preserved"
+    }
+  ],
+  "input_definition_name_inventory_preserved": true,
+  "input_definitions": 1115,
+  "all_original_noncache_files_accounted_for": true,
+  "model_files_byte_identical_to_input": true,
+  "added_python_files": [
+    "lvimot/__main__.py",
+    "tests/test_estimated_ego_offline_map.py"
+  ],
+  "moved_definitions": {
+    "src/carla_offline_scene.py::ObjectTrackArchive": "lvimot/mapping_4d/multiobject_trajectory_management.py::ObjectTrackArchive",
+    "src/carla_offline_scene.py::_trajectory_from_history": "lvimot/mapping_4d/multiobject_trajectory_management.py::_trajectory_from_history"
+  },
+  "empty_original_initializer_replaced": "src/__init__.py -> lvimot/__init__.py",
+  "algorithm_change": "Accepted estimator algorithms preserved; added display-only ego archive and moved GT early-stop diagnosis to post-run report",
+  "cleanup_policy": "Only relocated/consolidated originals and regenerable caches were removed from the new copy; validation code retained"
+}

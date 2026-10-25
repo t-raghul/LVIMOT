@@ -1,0 +1,17 @@
+[
+  {
+    "name": "original_gt",
+    "code": 0,
+    "seconds": 190.704000000027
+  },
+  {
+    "name": "cleaned_gt",
+    "code": 0,
+    "seconds": 149.31199999997625
+  },
+  {
+    "name": "cleaned_no_gt",
+    "code": 0,
+    "seconds": 153.21900000004098
+  }
+]

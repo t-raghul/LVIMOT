@@ -1,0 +1,47 @@
+{
+  "source": "https://huggingface.co/nvidia/segformer-b0-finetuned-cityscapes-768-768",
+  "revision": "d3b7801ed329668d5bff04cd33365fa37f538c3b",
+  "input_shape": [
+    1,
+    3,
+    256,
+    832
+  ],
+  "road_class_id": 0,
+  "labels": {
+    "0": "road",
+    "1": "sidewalk",
+    "2": "building",
+    "3": "wall",
+    "4": "fence",
+    "5": "pole",
+    "6": "traffic light",
+    "7": "traffic sign",
+    "8": "vegetation",
+    "9": "terrain",
+    "10": "sky",
+    "11": "person",
+    "12": "rider",
+    "13": "car",
+    "14": "truck",
+    "15": "bus",
+    "16": "train",
+    "17": "motorcycle",
+    "18": "bicycle"
+  },
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "torchscript_max_logit_error": 0.0,
+  "torch": "2.4.1+cpu",
+  "original_weights_sha256": "5651662ddb59fc9ec6e343cb6a0535e8339885b2a5ca9661dc5721454e9ed7e9",
+  "torchscript_sha256": "52a4948db6ce858ca76ae77064d45bb17c6a33b193253bc52837f446851ce734",
+  "license": "NVIDIA Source Code License for SegFormer; research/evaluation only; see LICENSE"
+}

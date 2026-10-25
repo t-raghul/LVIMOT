@@ -1,0 +1,31 @@
+{
+  "purpose": "Four training-only crop fixtures. No evaluation pixels used. No GT passed to inference.",
+  "sources": [
+    {
+      "training_capture": "D:\\SEM\\LVIMOT\\old\\LVIMOT_WORKMODE_INTEGRATED_20261020\\outputs_carla\\live\\sensor_recordings\\capture_20261020_085053_922129",
+      "frame": 10,
+      "actor_id_training_label_only": -300322880405613972
+    },
+    {
+      "training_capture": "D:\\SEM\\LVIMOT\\old\\LVIMOT_WORKMODE_INTEGRATED_20261020\\outputs_carla\\live\\sensor_recordings\\capture_20261020_085053_922129",
+      "frame": 13,
+      "actor_id_training_label_only": -300322880405613972
+    },
+    {
+      "training_capture": "D:\\SEM\\LVIMOT\\old\\LVIMOT_WORKMODE_INTEGRATED_20261020\\outputs_carla\\live\\sensor_recordings\\capture_20261020_085053_922129",
+      "frame": 23,
+      "actor_id_training_label_only": 50
+    },
+    {
+      "training_capture": "D:\\SEM\\LVIMOT\\old\\LVIMOT_WORKMODE_INTEGRATED_20261020\\outputs_carla\\live\\sensor_recordings\\capture_20261020_085053_922129",
+      "frame": 24,
+      "actor_id_training_label_only": 50
+    }
+  ],
+  "expected_scores": [
+    0.07776424288749695,
+    0.10945753008127213,
+    0.8043665289878845,
+    0.9612267017364502
+  ]
+}
