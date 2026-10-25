@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: >-
+  If you use this repository, please cite the LVIMOT implementation and
+  acknowledge the original LVIMOT research paper listed in the references.
+type: software
+title: "LVIMOT: LiDAR-Visual-Inertial Localization, Multi-Object Tracking and 4D Mapping"
+authors:
+  - name: "LVIMOT project contributors"
+version: 1.0.0
+date-released: 2026-10-25
+repository-code: "https://github.com/t-raghul/LVIMOT"
+url: "https://github.com/t-raghul/LVIMOT"
+references:
+  - type: article
+    title: "LVIMOT: Accurate and robust LiDAR-visual-inertial localization and multi-object tracking in dynamic environments via tightly coupled integration"
+    authors:
+      - family-names: Feng
+        given-names: Shaoquan
+      - family-names: Li
+        given-names: Xingxing
+      - family-names: Yan
+        given-names: Zhuohao
+      - family-names: Zhou
+        given-names: Yuxuan
+      - family-names: Xia
+        given-names: Chunxi
+    journal: "ISPRS Journal of Photogrammetry and Remote Sensing"
+    volume: 230
+    year: 2025
+    start: 675
+    end: 692
