@@ -115,6 +115,16 @@ captures and independently generated reference PLYs are **not committed**.
 105-frame offline validation and references assets not included in the
 original uploaded final ZIP. Do not confuse it with the 197-frame sample.
 
+## Original Research and Acknowledgements
+This project is based on the research paper:
+**Shaoquan Feng, Xingxing Li, Zhuohao Yan, Yuxuan Zhou, and Chunxi Xia**, “LVIMOT: Accurate and robust LiDAR-visual-inertial localization and multi-object tracking in dynamic environments via tightly coupled integration,” *ISPRS Journal of Photogrammetry and Remote Sensing*, vol. 230, pp. 675–692, 2025.
+
+Full credit for the original LVIMOT research methodology and scientific contributions belongs to the authors.
+
+This repository presents an independent CARLA-based implementation and development project inspired by the published research, with additional simulation integration, perception components, visualization, mapping and evaluation features.
+
+This repository is not an official implementation maintained or endorsed by the original paper's authors.
+
 ## License and scope
 
 See [third-party notices](THIRD_PARTY_NOTICES.md). SegFormer-B0 is supplied
